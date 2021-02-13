@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+
+audio {
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 10px;
+}
+
+.wel {
+    background: #191919;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 11;
+
+    .wel-text {
+        color: #FF5456;
+        font-size: 3.5rem;
+        text-align: center;
+
+        .hide-header {
+            letter-spacing: 1px;
+            font-weight: 100;
+            overflow: hidden;
+
+            .text-header {
+                transform: translateY(100%);
+                display: inline-block;
+                text-transform: uppercase;
+            }
+        }
+
+        .hide-header:nth-child(2) {
+            margin: 25px 0px;
+        }
+    }
+}
+
+.slider-go-left {
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 0%;
+    width: 50%;
+    height: 100%;
+    z-index: 10;
+}
+
+.slider-go-right {
+    background: #333;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    z-index: 10;
+}
+
+main {
+    opacity: 0;
+    height: 100vh;
+    width: 100%;
+    animation: zoom 1s ease-out 6.5s forwards;
+
+    section.hero {
+        background: #000;
+        width: 100vw;
+        height: inherit;
+        position: relative;
+
+        .hero-video {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            video {
+                width: 100%;
+                height: inherit;
+            }
+        }
+
+        .hero-video::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 1;
+            opacity: 0.7;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 72px;
+            width: 80%;
+            z-index: 5;
+
+            h1 {
+                color: #fff;
+                text-align: center;
+                text-transform: uppercase;
+
+                span {
+                    color: #FF5456;
+                }
+            }
+        }
+    }
+
+    section.row-1 {
+        margin: 150px auto;
+        width: 60%;
+        
+        .row-1-text {
+
+            p {
+                text-align: justify;
+                font-size: 18px;
+                line-height: 1.75;
+            }
+        }
+    }
+
+    section.row-2 {
+        height: 1000px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            font-size: 100px;
+            font-family: 'Dancing Script', cursive;
+            color: #EE5757;
+            padding: 25px;
+        }
+    }
+}
+
+@keyframes zoom {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
